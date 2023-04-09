@@ -2,104 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+html {
+  @apply scroll-smooth;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  @apply font-primary;
+  @apply bg-primary;
 }
 
-body {
-
+h1 {
+  @apply font-primary text-2xl md:text-4xl;
 }
 
-a {
-  color: inherit;
+h2 {
+  @apply font-primary text-xl md:text-3xl;
+}
+
+h3 {
+  @apply font-primary text-lg md:text-2xl;
+}
+
+h4 {
+  @apply font-primary text-base md:text-lg;
+}
+
+.layout-component {
+  @apply mx-auto max-w-4xl py-4;
+}
+
+.content-liftup {
+  position: relative;
   text-decoration: none;
 }
+.triple-border {
+  position: relative;
+  padding: 1px;
+  border-radius: 5px 0;
+}
+/* .triple-border--large-margin {
+    margin: 13px;
+} */
+.triple-border--large-margin:after,
+.triple-border--large-margin:before {
+  content: "";
+  border-width: 3px;
+  border-radius: 13px;
+  width: calc(100% + 10px);
+  height: calc(100% + 15px);
+}
+.triple-border__container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px 0;
+}
+.triple-border--large-margin:after,
+.triple-border--large-margin:before {
+  content: "";
+  border-width: 3px;
+  border-radius: 13px;
+  width: calc(100% + 15px);
+  height: calc(100% + 15px);
+}
+.triple-border:after {
+  bottom: 0;
+  right: 0;
+}
+.triple-border:after,
+.triple-border:before {
+  z-index: 2;
+  content: "";
+  border: 2px solid white;
+  border-radius: 5px;
+  position: absolute;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+}
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.image {
+  padding: 5px 10px;
+}
+.image:hover {
+  background: white;
+  z-index: 100;
 }
