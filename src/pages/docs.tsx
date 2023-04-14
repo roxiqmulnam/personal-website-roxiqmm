@@ -1,4 +1,3 @@
-import Hero from "@/components/layouts/Hero";
 import Layout from "@/components/layouts/Layout";
 import Head from "next/head";
 export default function Home() {
@@ -7,9 +6,7 @@ export default function Home() {
       <Head>
         <title>Roxiq Mulna Muhammad - Personal Website</title>
       </Head>
-      <Layout>
-        <Hero />
-      </Layout>
+
     </>
   );
 }

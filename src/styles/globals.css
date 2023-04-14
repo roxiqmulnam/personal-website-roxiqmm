@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
 html {
   @apply scroll-smooth;
 }
@@ -27,7 +34,7 @@ h4 {
 }
 
 .layout-component {
-  @apply mx-auto max-w-4xl py-4;
+  @apply mx-auto max-w-5xl py-4;
 }
 
 .content-liftup {
@@ -46,7 +53,6 @@ h4 {
 .triple-border--large-margin:before {
   content: "";
   border-width: 3px;
-  border-radius: 13px;
   width: calc(100% + 10px);
   height: calc(100% + 15px);
 }
@@ -69,19 +75,11 @@ h4 {
 }
 .triple-border:after,
 .triple-border:before {
-  z-index: 2;
+  z-index: 0;
   content: "";
   border: 2px solid white;
   border-radius: 5px;
   position: absolute;
   width: calc(100% + 5px);
   height: calc(100% + 5px);
-}
-
-.image {
-  padding: 5px 10px;
-}
-.image:hover {
-  background: white;
-  z-index: 100;
 }
